@@ -1,0 +1,4 @@
+Pie chart / big number of reviews less than 15 characters
+Screenshots of short reviews (sheet, lit, af)
+Meme (be like stackoverflow)
+Textbox that counts down number of  characters until you reach minimum limit
