@@ -67,24 +67,39 @@ def getProductNumbers():
 
 def getAllProductReviews():
     shortReviewCount = 0
-    count = 0
+    productsWithReviews = 0
+    numberOfReviews = 0
+    currentLineOfFile = 0
 
     with open("sku.txt") as infile:
         for line in infile:
-            count += 1
-            if count % 100 == 0:
-                print(count)
+            currentLineOfFile += 1
+            if currentLineOfFile %10 == 0:
+                print("Count: " + str(currentLineOfFile))
+            if currentLineOfFile >= 100:
+                break
 
             # Get product reviews
-            reviews = getProductReviews(str(line))
+            reviews = getProductReviews(str(line)[:-1])
 
-            # Count things
+            # Check if there are no reviews for the product
+            if len(reviews) == 0:
+                continue
+            productsWithReviews += 1
+
+            # Process reviews
             for review in reviews:
                 text = review['reviewText']
+                if (len(text) == 0):
+                    print("Review text was empty")
+                    continue
+
+                numberOfReviews += 1
                 if len(text) < MIN_REVIEW_LENGTH:
                     shortReviewCount += 1
 
-    print(shortReviewCount)
+    print("There were " + str(shortReviewCount) + " reviews with less that " + str(MIN_REVIEW_LENGTH) + " characters")
+    print("There were " + str(productsWithReviews) +  " products with reviews")
     return shortReviewCount
 
 

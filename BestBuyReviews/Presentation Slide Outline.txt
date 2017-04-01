@@ -2,3 +2,20 @@ Pie chart / big number of reviews less than 15 characters
 Screenshots of short reviews (sheet, lit, af)
 Meme (be like stackoverflow)
 Textbox that counts down number of  characters until you reach minimum limit
+
+Study: Sliders vs. text boxes vs. emojis. Reputation being harmed by crappy / negative reviews
+Prove short reviews encourages shorts reviews (long reviews begets long reviews)
+Test if products with long reviews have lots of long reviews
+
+Quantify labor savings, show negative reviews hurt reputation, long reviews encourage long reviews
+
+elegant, simplistic, turn key, easy to impliment
+
+We understand how laughable this is.
+We brought you the easiest to impliment solution and it provides tangible benefits
+
+Can't believe you didn't do this already
+Not a moon shot that won't work, this is guarteed to work and can be implimented in under a week by a co-op student
+You will save $x
+
+Come to us to get stuff done.
