@@ -3,7 +3,8 @@ import json
 
 PRODUCTS_PER_PAGE = 96
 PAGES_PER_WRITE = 20
-TOTAL_PAGES_OF_CATALOG = 1400
+TOTAL_PAGES_OF_CATALOG = 5
+MIN_REVIEW_LENGTH = 15
 
 # Gets the total number of products
 def getTotalNumberOfProducts():
@@ -64,6 +65,41 @@ def getProductNumbers():
 
     print ("There were " +  str(TOTAL_PAGES_OF_CATALOG * PRODUCTS_PER_PAGE)  + " products in the product")
 
+def getAllProductReviews():
+    shortReviewCount = 0
+    count = 0
+
+    with open("sku.txt") as infile:
+        for line in infile:
+            count += 1
+            if count % 100 == 0:
+                print(count)
+
+            # Get product reviews
+            reviews = getProductReviews(str(line))
+
+            # Count things
+            for review in reviews:
+                text = review['reviewText']
+                if len(text) < MIN_REVIEW_LENGTH:
+                    shortReviewCount += 1
+
+    print(shortReviewCount)
+    return shortReviewCount
+
+
+def getProductReviews( skuId ):
+    url = "https://msi.bbycastatic.ca/mobile-si/si/pdp/reviewDetails/{}?lang=en&source=can"\
+            .format(skuId)
+
+    try:
+        text = urllib.request.urlopen(url)
+        jsonText = json.load(text)
+        return jsonText['si']['response']['results']
+    except Exception:
+        return []
+
 
 # Get all the sku numbers
-getProductNumbers()
+# getProductNumbers()
+getAllProductReviews()
