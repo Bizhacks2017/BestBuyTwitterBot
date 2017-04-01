@@ -3,9 +3,9 @@ import json
 
 PRODUCTS_PER_PAGE = 96
 PAGES_PER_WRITE = 20
-TOTAL_PAGES_OF_CATALOG = 25
+TOTAL_PAGES_OF_CATALOG = 1400
 
-# Gets the total number of products to get
+# Gets the total number of products
 def getTotalNumberOfProducts():
     url = "https://msi.bbycastatic.ca/mobile-si/si/v3/products/search?query=*&storeId&zipCode&facetsOnly&platform&lang=en&page=1"
     text = urllib.request.urlopen(url)
@@ -40,6 +40,7 @@ def getProductNumbers():
             if sku[0] != "M":
                 productList.append(doc['skuId'])
 
+        # Write to file in batches so list doesn't get too big
         if page % PAGES_PER_WRITE == 0:
             print("Writing to file")
 
@@ -48,6 +49,8 @@ def getProductNumbers():
                 for sku in productList:
                     line = sku + '\n'
                     outfile.write(line)
+
+            # Empty list
             productList = []
 
         if (page * PRODUCTS_PER_PAGE) >= totalNumberOfProducts:
