@@ -8,6 +8,20 @@ Prove short reviews encourages shorts reviews (long reviews begets long reviews)
 Test if products with long reviews have lots of long reviews
 
 Quantify labor savings, show negative reviews hurt reputation, long reviews encourage long reviews
+Most short reviews aren't helpful
+
+Reviews are useful to __% of customers. If __% of reviews are garbage then customers have less info
+and are less likely to buy a product
+
+Higher chance of getting to the top of google (better SEO)
+
+Quantify labor savings
+We did research into labor hours best buy uses to moderate and remove comments and extrapoleted the
+cost savings. Feel free to ask us about details in Q&A
+
+Admin reads - Time to read * Number of bad reviews * salary = money saved
+
+Provide Best Buy with better data
 
 elegant, simplistic, turn key, easy to impliment
 
@@ -19,3 +33,5 @@ Not a moon shot that won't work, this is guarteed to work and can be implimented
 You will save $x
 
 Come to us to get stuff done.
+
+enhances the shopping experience for best buy customers

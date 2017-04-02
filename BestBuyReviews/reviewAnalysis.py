@@ -4,7 +4,7 @@ import json
 PRODUCTS_PER_PAGE = 96
 PAGES_PER_WRITE = 20
 TOTAL_PAGES_OF_CATALOG = 25
-MIN_REVIEW_LENGTH = 15
+MIN_REVIEW_LENGTH = 30
 
 # Gets the total number of products
 def getTotalNumberOfProducts():
@@ -74,8 +74,16 @@ def getAllProductReviews():
     with open("sku.txt") as infile:
         for line in infile:
             currentLineOfFile += 1
-            if currentLineOfFile %100 == 0:
+
+            if currentLineOfFile < 1320:
+                continue
+
+            if currentLineOfFile %10 == 0:
                 print("Count: " + str(currentLineOfFile))
+                print("There were " + str(numberOfReviews) + " total reviews")
+                print("There were " + str(shortReviewCount) + " reviews with less that " + str(
+                    MIN_REVIEW_LENGTH) + " characters")
+                print("There were " + str(productsWithReviews) + " products with reviews")
             # if currentLineOfFile >= 100:
             #     break
 
